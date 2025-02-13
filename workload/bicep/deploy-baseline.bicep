@@ -9,7 +9,7 @@ targetScope = 'subscription'
 // ========== //
 
 @minLength(2)
-@maxLength(4)
+@maxLength(5)
 @sys.description('The name of the resource group to deploy. (Default: AVD1)')
 param deploymentPrefix string = 'AVD1'
 
@@ -604,7 +604,7 @@ var varZtKvPrivateEndpointName = 'pe-${varZtKvName}-vault'
 //
 var varFslogixSharePath = createAvdFslogixDeployment ? '\\\\${varFslogixStorageName}.file.${environment().suffixes.storage}\\${varFslogixFileShareName}' : ''
 var varBaseScriptUri = 'https://raw.githubusercontent.com/Azure/avdaccelerator/main/workload/'
-var varSessionHostConfigurationScriptUri = '${varBaseScriptUri}scripts/Set-SessionHostConfiguration.ps1'
+var varSessionHostConfigurationScriptUri = 'https://raw.githubusercontent.com/lubonbvba/azavdpublic/refs/heads/main/Scripts/Set-SessionHostConfiguration.ps1'
 var varSessionHostConfigurationScript = './Set-SessionHostConfiguration.ps1'
 var varDiskEncryptionKeyExpirationInEpoch = dateTimeToEpoch(dateTimeAdd(
   time,
