@@ -77,7 +77,7 @@ param deployMonitoring bool = false
 param deploymentEnvironment string = 'Dev'
 
 @minLength(2)
-@maxLength(4)
+@maxLength(5)
 @sys.description('The name of the resource group to deploy. (Default: AVD1)')
 param deploymentPrefix string = 'AVD1'
 
@@ -237,7 +237,7 @@ var varManagedDisk = empty(diskEncryptionSetResourceId) ? {
 var varFslogixStorageFqdn = configureFslogix ? '${fslogixStorageAccountName}.file.${environment().suffixes.storage}' : ''
 var varFslogixSharePath = configureFslogix ? '\\\\${fslogixStorageAccountName}.file.${environment().suffixes.storage}\\${fslogixFileShareName}' : ''
 var varBaseScriptUri = 'https://raw.githubusercontent.com/Azure/avdaccelerator/main/workload/'
-var varSessionHostConfigurationScriptUri = '${varBaseScriptUri}scripts/Set-SessionHostConfiguration.ps1'
+var varSessionHostConfigurationScriptUri = 'https://raw.githubusercontent.com/lubonbvba/azavdpublic/refs/heads/main/Scripts/Set-SessionHostConfiguration.ps1'
 var varSessionHostConfigurationScript = './Set-SessionHostConfiguration.ps1'
 var varAvdDefaultTags = {
   'cm-resource-parent': hostPoolResourceId
