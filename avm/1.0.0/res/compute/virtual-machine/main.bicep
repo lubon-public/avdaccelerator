@@ -501,7 +501,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2023-09-01' = {
         createOption: osDisk.?createOption ?? 'FromImage'
         deleteOption: osDisk.?deleteOption ?? 'Delete'
         //diskSizeGB: osDisk.?diskSizeGB ?? null
-        caching: osDisk.?caching ?? 'ReadWrite'
+        caching: osDisk.?caching ?? 'ReadOnly'
         managedDisk: {
           storageAccountType: osDisk.managedDisk.storageAccountType
           diskEncryptionSet: {
@@ -516,7 +516,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2023-09-01' = {
           //diskSizeGB: osDisk.diskSizeGB
           createOption: dataDisk.?createoption ?? 'Empty'
           deleteOption: dataDisk.?deleteOption ?? 'Delete'
-          caching: dataDisk.?caching ?? 'ReadWrite'
+          caching: dataDisk.?caching ?? 'ReadOnly'
           managedDisk: {
             storageAccountType: dataDisk.managedDisk.storageAccountType
             diskEncryptionSet: dataDisk.?managedDisk.?diskEncryptionSet ?? null
