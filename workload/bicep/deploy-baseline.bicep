@@ -673,7 +673,7 @@ var varFslogixSharePath = createAvdFslogixDeployment
   : ''
 var varBaseScriptUri = 'https://raw.githubusercontent.com/azure/avdaccelerator/main/workload/'
 var varSessionHostConfigurationScriptUri = 'https://raw.githubusercontent.com/lubonbvba/azavdpublic/refs/heads/main/Scripts/Set-SessionHostConfigurationv2.ps1'
-var varSessionHostConfigurationScript = 'Set-SessionHostConfiguration.ps1'
+var varSessionHostConfigurationScript = 'Set-SessionHostConfigurationv2.ps1'
 var varCreateStorageDeployment = (createAvdFslogixDeployment || varCreateAppAttachDeployment == true) ? true : false
 var varFslogixStorageSku = zoneRedundantStorage
   ? '${fslogixStoragePerformance}_ZRS'

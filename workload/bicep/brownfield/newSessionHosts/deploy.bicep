@@ -227,7 +227,7 @@ var varFslogixSharePath = configureFslogix
   : ''
 var varBaseScriptUri = 'https://raw.githubusercontent.com/azure/avdaccelerator/main/workload/'
 var varSessionHostConfigurationScriptUri = 'https://raw.githubusercontent.com/lubonbvba/azavdpublic/refs/heads/main/Scripts/Set-SessionHostConfigurationv2.ps1'
-var varSessionHostConfigurationScript = 'Set-SessionHostConfiguration.ps1'
+var varSessionHostConfigurationScript = 'Set-SessionHostConfigurationv2.ps1'
 var varAvdDefaultTags = {
   'cm-resource-parent': hostPoolResourceId
   Environment: deploymentEnvironment
