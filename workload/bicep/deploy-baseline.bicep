@@ -1034,7 +1034,7 @@ var varSecurityPrincipalName = !empty(avdSecurityGroups) ? avdSecurityGroups[0].
 // =========== //
 
 //  Telemetry Deployment
-resource telemetrydeployment 'Microsoft.Resources/deployments@2024-03-01' = if (enableTelemetry) {
+resource telemetrydeployment 'Microsoft.Resources/deployments@2025-04-01' = if (enableTelemetry) {
   name: varTelemetryId
   location: avdManagementPlaneLocation
   properties: {
@@ -1141,8 +1141,10 @@ module networking './modules/networking/deploy.bicep' = if (createAvdVnet || cre
     createVnetPeering: varCreateVnetPeering
     deployDDoSNetworkProtection: deployDDoSNetworkProtection
     ddosProtectionPlanName: varDDosProtectionPlanName
-    deployPrivateEndpointSubnet: (deployPrivateEndpointKeyvaultStorage || deployAvdPrivateLinkService) ? true : false //adding logic that will be used when also including AVD control plane PEs
+
+    deployPrivateEndpointKeyvaultStorage: deployPrivateEndpointKeyvaultStorage
     deployAvdPrivateLinkService: deployAvdPrivateLinkService
+    
     vNetworkGatewayOnHub: vNetworkGatewayOnHub
     existingHubVnetResourceId: existingHubVnetResourceId
     location: avdDeploySessionHosts ? avdSessionHostLocation : avdManagementPlaneLocation
